@@ -1,7 +1,7 @@
 # Task for TUKI
 ![java](https://img.shields.io/badge/Java%2017-orange) ![angular](https://img.shields.io/badge/Angular%2017-red)
 
-Welcome to the project ***Task for TUKI***. This project provides an full-stack web-site for uploading **image** files or url's and get tags from them.
+Welcome to the fullstack application ***Task for TUKI***. This project provides a web-site for uploading **image** files or url's and get tags from them.
 
 ## AWS technologies
 ***Angular SPA frontend*** hosted by AWS S3 bucket.
@@ -10,7 +10,7 @@ Welcome to the project ***Task for TUKI***. This project provides an full-stack 
 
 ***PostgreSQL*** hosted by AWS RDS.
 
-***RabbitMQ*** hoster by Amazon RQ
+***RabbitMQ*** hosted by Amazon RQ
 
 ### Backend and Frontend technologies
 About each of technology used you can read it named folder's for backend and frontend
