@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/image")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "YOUR_LINK_API")
+@CrossOrigin(origins = "http://correnet-angular-front.s3-website.us-east-2.amazonaws.com")
 public class ImageController {
     private final ImageService imageService;
 

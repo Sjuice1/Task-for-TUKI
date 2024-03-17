@@ -1,19 +1,28 @@
+*{
+    outline: none;
+    box-sizing: border-box;
+}
+
 .container{
     background-color: #8eadf5;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 15px 50px;
-}
-
-.search-form{
-    display: flex;
 }
 
 .dropdown-btn{
     position: relative;
     color: white;
     font-size: 24px;
+    font-family: "Numans", sans-serif;
+    
     cursor: pointer;
+}
+
+.search-form{
+    display: flex;
+    width: 33vw;
 }
 
 .url-form-container{
@@ -22,18 +31,33 @@
 }
 
 .url-input{
-    padding: 5px;
+    padding: 15px;
+    font-size: 18px;
     flex-grow: 1;
+    border-left: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    border-right: none;
+    &::placeholder {
+        font-family: "Numans", sans-serif;
+    }
 }
 
-.submit-btn{
+.submit-search-btn{
     width: 5vw;
+    border: none;
+    color: black;
+    background-color: lightgray;
 }
 
-.text-input{
-    width: 33vw;
+.search-input{
+    flex-grow: 1;
     padding: 5px;
+    font-size: 18px;
     border: 1px solid lightgray;
+    &::placeholder {
+        font-family: "Numans", sans-serif;
+    }
 
 }
 
@@ -44,7 +68,7 @@
     border: 1px solid lightgray;
     display: flex;
     flex-direction: column;
-    top: 41px;
+    top: 44px;
     left: -2px;
     display: none;
     background-color: white;
@@ -98,14 +122,38 @@
 
 .submit-file-btn{
     padding: 15px;
+    background-color: #02449c;
+    font-family: "Numans", sans-serif;
+    color: white;
+    border: none;
+    cursor: pointer;
+
+}
+
+.submit-url-btn{
+    background-color: #02449c;
+    color: white;
+    padding: 15px;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+
 }
 
 input[type=file]::-webkit-file-upload-button {
     display: none;
 }
+
 input[type='file'] {
     color: transparent;
     user-select: none;
+}
+
+.disabled{
+    opacity: 0.6;
+    cursor: default;
+
 }
 
 

@@ -8,6 +8,7 @@ import {
   START_SENDING_FILE_IMAGE,
   START_SENDING_URL_IMAGE,
 } from '../store/image.actions';
+import { HeaderService } from './header.service';
 
 @Component({
   selector: 'app-header',
@@ -22,9 +23,9 @@ export class HeaderComponent implements OnInit {
   urlRegex = new RegExp(
     '[-a-zA-Z0-9@:%._+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_+.~#?&//=]*)'
   );
-  fileSizeError: boolean = false;
+  fileError: boolean = false;
 
-  constructor(private store: Store<{ images: ImageState }>) {}
+  constructor(private headerService : HeaderService){}
 
   ngOnInit(): void {
     this.urlFormGroup = new FormGroup({
@@ -38,43 +39,30 @@ export class HeaderComponent implements OnInit {
   }
 
   onFileChanged(event: Event) {
-    const maxFileSize = 2 * 1024 * 1024;
-    const inputElement = event.target as HTMLInputElement;
-    if (inputElement.files !== null) {
-      this.selectedFile = inputElement.files[0];
-    }
-    if (this.selectedFile.size > maxFileSize) {
+    const file = this.headerService.validateFile(event.target as HTMLInputElement);
+    if(!file){
+      this.fileError = true;
       this.selectedFile = null!;
-      this.fileSizeError = true;
-    } else {
-      this.fileSizeError = false;
+      return;
     }
+    this.fileError = false;
+    this.selectedFile = file;
   }
   
   onSubmitUrl() {
-    this.store.dispatch(
-      START_SENDING_URL_IMAGE({ url: this.urlFormGroup.get('url')?.value })
-    );
+    const url = this.urlFormGroup.get('url')?.value;
+    this.headerService.submitUrl(url);
     this.urlFormGroup.reset();
   }
 
 
   onSubmitFile() {
-    const formData = new FormData();
-    formData.append('file', this.selectedFile);
-    this.store.dispatch(START_SENDING_FILE_IMAGE({ data: formData }));
+    this.headerService.submitFile(this.selectedFile);
   }
 
   onSearchSubmit(){
-    if(this.searchFormGroup.get('searchField')?.value === null || this.searchFormGroup.get('searchField')?.value === "" ){
-      
-      this.store.dispatch(
-        START_FETCHING_IMAGES()
-      )
-      return;
-    }
-    this.store.dispatch(
-      START_FETCHING_IMAGES_WITH_TAG({tag: this.searchFormGroup.get('searchField')?.value})
-    )
+    const tag = this.searchFormGroup.get('searchField')?.value;
+    this.headerService.submitSearch(tag);
+
   }
 }
