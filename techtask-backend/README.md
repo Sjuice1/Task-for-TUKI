@@ -23,3 +23,6 @@ Main endpoints ***are*** :
         return imageService.getImages(tagName);
     }
 ```
+After validating image file *(if you sending file)* ***ImageService*** generate a URL for link, sends it to the ***DB***, and sends image to ***AWS S3 bucket***.
+
+When image sended ***RabbitMQService*** sends a message for queue to ***RabbitMQAdapter*** listener and ***ClarifaiAdapter*** makes a request to external ***Clarifai API*** to get tags and items that image contains and saves it in ***DB***.  
