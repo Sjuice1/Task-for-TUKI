@@ -28,3 +28,8 @@ export const SEND_IMAGE = createAction(
     '[Images] Send image',
     props<{imageUrl : string}>()
 )
+
+export const FETCH_ERROR = createAction(
+    '[Images] Error Fetch'
+)
+

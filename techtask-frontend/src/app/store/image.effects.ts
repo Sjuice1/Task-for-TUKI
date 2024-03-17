@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
+  FETCH_ERROR,
   FETCH_IMAGES,
   SEND_IMAGE,
   START_FETCHING_IMAGES,
@@ -9,7 +10,7 @@ import {
   START_SENDING_FILE_IMAGE,
   START_SENDING_URL_IMAGE,
 } from './image.actions';
-import { map, switchMap } from 'rxjs';
+import { catchError, map, of, switchMap } from 'rxjs';
 import { environment } from '../../environments/environment.development';
 
 @Injectable()
@@ -19,19 +20,22 @@ export class ImageEffects {
   constructor(private actions$: Actions, private httpClient: HttpClient) {}
 
   startFetching = createEffect(() =>
-    this.actions$.pipe(
-      ofType(START_FETCHING_IMAGES),
-
-      switchMap(() => {
-        return this.httpClient.get<string[]>(`${this.apiLink}api/image`).pipe(
-          map((answData) => {
-            console.log(answData);
-            return FETCH_IMAGES({ images: answData });
-          })
-        );
-      })
+  this.actions$.pipe(
+    ofType(START_FETCHING_IMAGES),
+    switchMap(() =>
+      this.httpClient.get<string[]>(`${this.apiLink}api/image`).pipe(
+        map((answData) => {
+          console.log(answData);
+          return FETCH_IMAGES({ images: answData });
+        }),
+        catchError(err => {
+          console.error('An error occurred:', err);
+          return of(FETCH_ERROR());
+        })
+      )
     )
-  );
+  )
+);
 
   startFetchingWithTags = createEffect(() =>
     this.actions$.pipe(
@@ -44,6 +48,10 @@ export class ImageEffects {
           .pipe(
             map((answData) => {
               return FETCH_IMAGES({ images: answData });
+            }),
+            catchError(err => {
+              console.error('An error occurred:', err);
+              return of(FETCH_ERROR());
             })
           );
       })
@@ -61,6 +69,10 @@ export class ImageEffects {
           .pipe(
             map((answData) => {
               return SEND_IMAGE({ imageUrl: answData });
+            }),
+            catchError(err => {
+              console.error('An error occurred:', err);
+              return of(FETCH_ERROR());
             })
           );
       })
@@ -82,6 +94,10 @@ export class ImageEffects {
           .pipe(
             map((answData) => {
               return SEND_IMAGE({ imageUrl: answData });
+            }),
+            catchError(err => {
+              console.error('An error occurred:', err);
+              return of(FETCH_ERROR());
             })
           );
       })

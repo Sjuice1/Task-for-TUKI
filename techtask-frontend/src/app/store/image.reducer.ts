@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store"
-import { FETCH_IMAGES, SEND_IMAGE, START_FETCHING_IMAGES, START_SENDING_FILE_IMAGE, START_SENDING_URL_IMAGE } from "./image.actions"
+import { FETCH_ERROR, FETCH_IMAGES, SEND_IMAGE, START_FETCHING_IMAGES, START_SENDING_FILE_IMAGE, START_SENDING_URL_IMAGE } from "./image.actions"
 
 export interface ImageState {
     images : string[],
@@ -42,5 +42,11 @@ export const imageReducer = createReducer(
             images : [...initState.images,action.imageUrl],
             loading:false
         }
-    })
+    }),
+    on(FETCH_ERROR,(initState,action) => {
+        return {
+            images : initState.images,
+            loading:false
+        }
+    }),
 )

@@ -12,7 +12,6 @@ import { ImageEffects } from './store/image.effects';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoadingComponent } from './loading/loading.component';
 
 
 @NgModule({

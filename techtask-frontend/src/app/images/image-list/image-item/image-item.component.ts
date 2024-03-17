@@ -7,13 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ImageItemComponent implements OnInit {
   @Input('image') image! : String
-  loaded! : boolean;
+  imageLoaded! : boolean;
 
   ngOnInit(): void {
-    this.loaded = true;
+    this.imageLoaded = true;
   }
 
   onError(){
-    this.loaded = false;
+    this.imageLoaded = false;
   }
 }

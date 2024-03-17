@@ -11,6 +11,45 @@
     padding: 15px 50px;
 }
 
+.disabled{
+    opacity: 0.6;
+    cursor: default;
+}
+
+
+//// Search form 
+
+
+.search-form{
+    display: flex;
+    width: 33vw;
+}
+
+.search-input{
+    flex-grow: 1;
+    padding: 5px;
+    font-size: 18px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    &::placeholder {
+        font-family: "Numans", sans-serif;
+    }
+
+}
+
+.submit-search-btn{
+    width: 5vw;
+    border: none;
+    color: white;
+    background-color: rgb(45, 123, 241);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/// Dropdown section
+
+
 .dropdown-btn{
     position: relative;
     color: white;
@@ -20,10 +59,30 @@
     cursor: pointer;
 }
 
-.search-form{
+.drop-down-menu{
+    cursor: default;
+    position: absolute;
+    border: 1px solid lightgray;
     display: flex;
-    width: 33vw;
+    flex-direction: column;
+    top: 44px;
+    left: -2px;
+    display: none;
+    background-color: white;
 }
+
+.open .drop-down-menu{
+    display: flex;
+}
+
+.form-separator{
+    text-align: center;
+    color: black;
+    padding-top: 25px;
+}
+
+
+/// Url load form
 
 .url-form-container{
     display: flex;
@@ -43,45 +102,24 @@
     }
 }
 
-.submit-search-btn{
-    width: 5vw;
-    border: none;
-    color: black;
-    background-color: lightgray;
-}
-
-.search-input{
-    flex-grow: 1;
-    padding: 5px;
-    font-size: 18px;
-    border: 1px solid lightgray;
-    &::placeholder {
-        font-family: "Numans", sans-serif;
-    }
-
-}
-
-
-.drop-down-menu{
-    cursor: default;
-    position: absolute;
-    border: 1px solid lightgray;
-    display: flex;
-    flex-direction: column;
-    top: 44px;
-    left: -2px;
-    display: none;
-    background-color: white;
-}
-
-.open .drop-down-menu{
-    display: flex;
-}
-
 .url-form{
     display: flex;
     justify-content: center;
 }
+
+.submit-url-btn{
+    background-color: #02449c;
+    color: white;
+    padding: 15px;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+
+/// File form
 
 .file-form{
     display: flex;
@@ -106,7 +144,7 @@
     }
 }
 
-.selected{
+.selected-file{
     cursor: pointer;
         transition: 500ms;
         background: url('/assets/header/upload-enabled.png');
@@ -130,16 +168,6 @@
 
 }
 
-.submit-url-btn{
-    background-color: #02449c;
-    color: white;
-    padding: 15px;
-    font-size: 24px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-
-}
 
 input[type=file]::-webkit-file-upload-button {
     display: none;
@@ -150,27 +178,14 @@ input[type='file'] {
     user-select: none;
 }
 
-.disabled{
-    opacity: 0.6;
-    cursor: default;
-
-}
-
-
-.form-separator{
-    text-align: center;
-    color: black;
-    padding-top: 25px;
-
-
-}
-
 .select-file{
     text-align: center;
     color: black;
     padding-bottom: 15px;
 
 }
+
+/// Image error 
 
 .error{
     color: red;

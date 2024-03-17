@@ -1,13 +1,5 @@
 import { Component, OnInit, effect } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import { ImageState } from '../store/image.reducer';
-import {
-  START_FETCHING_IMAGES,
-  START_FETCHING_IMAGES_WITH_TAG,
-  START_SENDING_FILE_IMAGE,
-  START_SENDING_URL_IMAGE,
-} from '../store/image.actions';
 import { HeaderService } from './header.service';
 
 @Component({

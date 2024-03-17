@@ -1,8 +1,31 @@
+/// Image list
+
 .container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+ text-align: center;
+ columns: 4;
+ column-gap: 0px;
 }
+
+
+@media (max-width: 1550px) {
+    .container {
+        columns: 3;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        columns: 2;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        columns: 1;
+    }
+}
+
+/// Loading block
 
 app-loading {
     position: fixed;
