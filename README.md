@@ -21,4 +21,4 @@ About each of technology used you can read in named folder's for backend and fro
 ***andritokar@gmail.com***
 
 # Please note 
-That frontend logic is still updating right now
+That frontend logic is still updating right now.
