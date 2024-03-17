@@ -2,6 +2,8 @@
 ![Java](https://img.shields.io/badge/Java-17-orange) ![spring](https://img.shields.io/badge/SpringBoot-V_3.23-green)  ![postgres](https://img.shields.io/badge/PostgreSQL-V_16-blue) ![rabbitMq](https://img.shields.io/badge/RabbitMQ-V_3.11-orange) ![clarifai](https://img.shields.io/badge/CLARIFAI%20API-blue) ![clarifai](https://img.shields.io/badge/Maven-blue)
 
 ## About
+For table initizaling project contains a ***FlywayDB*** migrations.
+
 The project uses a ***single*** controller for managing images.
 
 Main endpoints ***are*** : 
