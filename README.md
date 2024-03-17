@@ -5,8 +5,11 @@ Welcome to the project ***Task for TUKI***. This project provides an full-stack 
 
 ## AWS technologies
 ***Angular SPA frontend*** hosted by AWS S3 bucket.
+
 ***Java Spring MVN backend*** hosted by AWS EC2.
+
 ***PostgreSQL*** hosted by AWS RDS.
+
 ***RabbitMQ*** hoster by Amazon RQ
 
 ### Backend and Frontend technologies
