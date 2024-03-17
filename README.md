@@ -13,7 +13,7 @@ Welcome to the fullstack application ***Task for TUKI***. This project provides 
 ***RabbitMQ*** hosted by Amazon RQ
 
 ### Backend and Frontend technologies
-About each of technology used you can read it named folder's for backend and frontend
+About each of technology used you can read in named folder's for backend and frontend.
 
 #### Contacts
 ***andritokar@gmail.com***
