@@ -1,0 +1,24 @@
+<div class="container">
+    <ul class="dropdown-btn" href="#" value="" appDropdownMenu> Upload Image
+        <div class="drop-down-menu">
+        <form class="url-form" [formGroup]="urlFormGroup" (ngSubmit)="onSubmitUrl()">
+            <div class="url-form-container">
+            <input formControlName="url" type="text" class="url-input" placeholder="Paste the image URL">
+            <input [disabled]="!urlFormGroup.valid" type="submit" class="submit-url-btn" value="Upload">
+            </div>
+        </form>
+        <span class="form-separator">OR</span>
+        <form class="file-form" [formGroup]="fileFormGroup" (ngSubmit)="onSubmitFile()">
+            <div class="file-form-container">
+            <input [ngClass]="{'selected':selectedFile}" formControlName="file" type="file" class="file-input" id="fileElem" (change)="onFileChanged($event)">
+            <span class="select-file" [ngClass]="{'error':fileSizeError}">Select image up to 2MB</span>
+            <input [disabled]="!selectedFile" type="submit" class="submit-file-btn" value="Upload">
+            </div>
+        </form>
+    </div>
+    </ul>
+    <form class="search-form" [formGroup]="searchFormGroup" (ngSubmit)="onSearchSubmit()">
+        <input formControlName="searchField" type="text" class="text-input" placeholder="Search for tags">
+        <input type="submit" class="submit-btn" value="🔍︎">
+    </form>
+</div>

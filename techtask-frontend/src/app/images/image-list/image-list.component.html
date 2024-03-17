@@ -1,0 +1,11 @@
+<div *ngIf="isLoading" style="text-align: center;">
+    <div class="loading-background"></div>
+    <app-loading></app-loading>
+    </div>
+    
+
+<div class="container">
+    <div *ngFor="let i of images" class="images">
+        <app-image [image]="i"></app-image>
+    </div>
+</div>

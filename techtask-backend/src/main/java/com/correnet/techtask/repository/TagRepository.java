@@ -1,0 +1,12 @@
+package com.correnet.techtask.repository;
+
+import com.correnet.techtask.domain.Tag;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface TagRepository extends JpaRepository<Tag,Long> {
+    List<Tag> findAllByName(String tagName);
+}

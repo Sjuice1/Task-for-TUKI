@@ -1,0 +1,149 @@
+.container{
+    background-color: #8eadf5;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+}
+
+.search-form{
+    display: flex;
+}
+
+.dropdown-btn{
+    position: relative;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.url-form-container{
+    display: flex;
+    width: 100%;
+}
+
+.url-input{
+    padding: 5px;
+    flex-grow: 1;
+}
+
+.submit-btn{
+    width: 5vw;
+}
+
+.text-input{
+    width: 33vw;
+    padding: 5px;
+    border: 1px solid lightgray;
+
+}
+
+
+.drop-down-menu{
+    cursor: default;
+    position: absolute;
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    top: 41px;
+    left: -2px;
+    display: none;
+    background-color: white;
+}
+
+.open .drop-down-menu{
+    display: flex;
+}
+
+.url-form{
+    display: flex;
+    justify-content: center;
+}
+
+.file-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.file-input{
+    padding: 150px;
+    background: url('/assets/header/upload-disabled.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    &:hover{
+        cursor: pointer;
+        transition: 500ms;
+        background: url('/assets/header/upload-enabled.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+.selected{
+    cursor: pointer;
+        transition: 500ms;
+        background: url('/assets/header/upload-enabled.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+}
+
+.file-form-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.submit-file-btn{
+    padding: 15px;
+}
+
+input[type=file]::-webkit-file-upload-button {
+    display: none;
+}
+input[type='file'] {
+    color: transparent;
+    user-select: none;
+}
+
+
+.form-separator{
+    text-align: center;
+    color: black;
+    padding-top: 25px;
+
+
+}
+
+.select-file{
+    text-align: center;
+    color: black;
+    padding-bottom: 15px;
+
+}
+
+.error{
+    color: red;
+    animation: shake 0.5s ease-in-out;
+}
+
+
+@keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(5px);
+    }
+    50% {
+      transform: translateX(-5px);
+    }
+    75% {
+      transform: translateX(5px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }

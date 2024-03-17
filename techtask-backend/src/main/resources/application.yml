@@ -1,0 +1,29 @@
+spring:
+  rabbitmq:
+    addresses: ${RABBIT_ADDRESS:localhost:5672}
+    host: ${RABBIT_HOST:localhost}
+    port: ${RABBIT_PORT:5672}
+    username: ${RABBIT_USERNAME:guest}
+    password: ${RABBIT_PASSWORD:guest}
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 2MB
+  datasource:
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:22813337}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/postgres}
+
+aws:
+  accessKey: ${AWS_ACCESS_KEY:your_key}
+  secretAccessKey: ${AWS_SECRET_ACCESS_KEY:your_secret_key}
+  bucketLink: https://correnet-task-bucket.s3.us-east-2.amazonaws.com/
+  bucketName: correnet-task-bucket
+
+clarifai:
+  api_url: https://api.clarifai.com/v2/users/clarifai/apps/main/models/general-image-recognition/versions/aa7f35c01e0642fda5cf400f543e7c40/outputs
+  authorization_key: ${CLARIFAI_AUTHORIZATION_KEY:your_key}
+
+
+
+

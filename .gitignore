@@ -1,0 +1,10 @@
+techtask-frontend/node_modules/
+techtask-frontend/dist/
+techtask-frontend/.DS_Store
+techtask-frontend/.vscode/
+
+techtask-backend/.idea/
+techtask-backend/*.iml
+techtask-backend/*.iws
+techtask-backend/log/
+techtask-backend/target/
