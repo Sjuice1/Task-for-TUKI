@@ -30,4 +30,4 @@ After validating image file *(if you sending file)* ***ImageService*** generate 
 When image sended ***RabbitMQService*** sends a message for queue to ***RabbitMQAdapter*** listener and ***ClarifaiAdapter*** makes a request to external ***Clarifai API*** to get tags and items that image contains and saves it in ***DB***.  
 
 ### Testing
-Project is unit tested for all main components: *controller*,*service*,*adapter*,*convertor*.
+Project is unit tested for all main components: *controller*, *service*, *adapter*, *convertor*.
