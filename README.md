@@ -10,7 +10,7 @@ Welcome to the fullstack application ***Task for TUKI***. This project provides 
 
 ***PostgreSQL*** hosted by AWS RDS.
 
-***RabbitMQ*** hosted by Amazon RQ.
+***RabbitMQ*** hosted by Amazon MQ.
 
 ***AWS S3 bucket*** host by Amazon for image cloud.
 
